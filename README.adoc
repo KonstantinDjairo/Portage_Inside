@@ -20,17 +20,25 @@ Lines should typically not be longer than 80 characters; if they are, an
 attempt should be made to wrap them.  Move code to the line below and
 indent once (\t).
 
+[source,python]
+
+----
 errors.append(MalformedMetadata(
 	errors.DESCRIPTION_TOO_LONG_ERROR % \
 	(length, max_desc_len),
 	attr='DESCRIPTION.toolong')
+----
 
 Do not do this:
 
+[source,python]
+
+----
 errors.append(MalformedMetadata(
               errors.DESCRIPTION_TOO_LONG_ERROR % \
               (length, max_desc_len),
               attr='DESCRIPTION.toolong')
+----
 
 The mixing of tabs and spaces means other developers can't read what you
 did. This is why the Python PEPs state spaces over tabs; because with

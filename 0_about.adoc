@@ -1,0 +1,22 @@
+==About Portage 
+----
+Portage is a package management system originally created
+for and used by Gentoo Linux,and Funtoo Linux among others.
+
+Portage is based on concept of ports collections. Gentoo is 
+sometimes referred to as a meta-distribuition due to the 
+extremely flexibility of Portage,which makes it operating-system
+independent.
+
+The Gentoo is concerned with using Portage to manage other
+operating systems,such as BSDs,macOS and Solaris,the most
+notable of these implementation is the Gentoo/FreeBSD project.
+
+There is an ongoing effort called the Package Manager Specification
+(PMS),which aims to standardise and document the behaviour of
+Portage,allowing the ebuild tree and Gentoo system packages 
+to be used with alternative package managers such as Paludis 
+and pkgcore. Its goal is to specify the exact set of features
+and behaviour of package manager and ebuilds,serving as an
+authoritative reference for Portage.
+----

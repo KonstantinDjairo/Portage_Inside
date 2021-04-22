@@ -48,11 +48,20 @@ as easily as tabwidth).
 Comparisons
 -----------
 
+
+[source,python]
+----
 if foo != None
+----
 
 should be replaced with:
 
+[source,python]
+
+----
 if foo is not None:
+----
+
 
 Is not does a reference comparison (address1 = address2 basically) and
 the == forces a by value compare (with __eq__())
@@ -62,26 +71,43 @@ Dict Lookups
 
 Try not to use has_key, you can use
 
+[source,python]
+
+----
 if foo in dict
+----
 
 instead of if dict.has_key(foo)
 
 Also don't do stuff like:
 
+
+[source,python]
+----
 if foo in dict and dict[foo]:
+----
 
 Generally you can do two things here, if you are messing with defaults..
 
+[source,python]
+----
 dict.get(foo, some_default)
+----
+
+
 
 will try to retrieve foo from dict, if there is a KeyError, will insert
 foo into dict with the value of some_default.  This method is preferred
 in cases where you are messing with defaults:
 
+
+[source,python]
+----
 try:
 	dict[foo]
 except KeyError:
 	dict[foo] = default_value
+----
 
 The get call is nicer (compact) and faster (try,except are slow).
 
@@ -92,10 +118,18 @@ Don't use the format raise Exception, "string"
 It will be removed in py3k.
 
 YES:
-  raise KeyError("No key")
+[source,python]
+----
+raise KeyError("No key")
+----
+
 
 NO:
-  raise KeyError, "No key"
+[source,python]
+----
+raise KeyError, "No key"
+----
+
 
 Imports
 -------
@@ -103,52 +137,70 @@ Imports
 Import things one per line
 
 YES:
+
+[source,python]
+----
   import os
   import time
   import sys
+----
 
 NO:
+[source,python]
+----
   import os,sys,time
+----
+
 
 When importing from a module, you may import more than 1 thing at a
 time.
 
 YES:
+[source,python]
+----
   from portage.module import foo, bar, baz
+----
 
 Multiline imports are ok (for now :))
 
 Try to group system and package imports separately.
 
 YES:
+[source,python]
+----
   import os
   import sys
   import time
 
   from portage.locks import lockfile
   from portage.versions import vercmp
+----
 
 NO:
+[source,python]
+----
   import os
   import portage
   import portage.util
   import time
   import sys
-
+----
 Try not to import large numbers of things into the namespace of a module.
 I realize this is done all over the place in current code but it really
 makes it a pain to do code reflection when the namespace is cluttered
 with identifiers from other modules.
 
 YES:
-
+[source,python]
+----
 from portage import output
-
+----
 NO:
-
+[source,python]
+----
 from portage.output import bold, create_color_func, darkgreen, \
   green, nocolor, red, turquoise, yellow
-
+----
 The YES example imports the 'output' module into the current namespace.
 The negative here is having to use output.COLOR all over the place
 instead of just COLOR.  However it means during introspection of the

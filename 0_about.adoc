@@ -39,9 +39,10 @@ for eMerge".
 
 == Functions Provided
 
-Portage is characterized by its main function: compiling from source code the packages the user whishes to install. In doing so
-it allows costumization of compiler and target-application options
-to fit the system's specifications and to user's own whishes.
+Portage is characterized by its main function: 
+compiling from source code the packages the user whishes to install. 
+In doing so it allows costumization of compiler and target-application 
+options to fit the system's specifications and to user's own whishes.
 
 Functionalities related to system management incluide:
 
@@ -73,7 +74,68 @@ Portage distinguishes between three level of stability in ebuilds:
 
 
 
+== Features
+=== Emerge
 
+The emerge command-line tool is the heart of portage. The command is
+costumizable with many options and modifiers. The emerge tool is the most
+important utility for acessing the features of Portage from commnad line.
+
+The program calculates and manages dependencies,executes ebuilds and
+maintains the local Portage tree and database of installed packages.
+The compilation settings used by ebuilds can be changed through the CFLAGS
+environment variable,based on the specifications of the individual computer
+and on the user's desire for optimization. The emerge utility executes 
+ebuilds in a sandbox environment.
+
+- sandbox :
+          a sandbox is a security mechanism for separating running
+          programs,usually in an effor to mitigate system failures
+          and/or software vulnerabilities from spreading. It is 
+          often used to execute untested or untrusted programs or
+          code,possibly from unverfied or untrusted third parties,
+          suppliers,users or websites,without risking harm to the
+          host machine or operating system. A sandbox typically 
+          provides a tightly controlled set of resources for guest
+          programs to run in,such as storage and memory scratch 
+          space. Network acess,the ability to inspect the host 
+          system or read from input devices are usually disallowed
+          or heavily restricted. In the sense of providing a highly
+          controlled environment, sandboxes may be seen as a specific
+          example of virtualization. 
+
+This way the system is protected from software executed by the ebuild and 
+resulting binaries are only merged after a sucessfull build and sandboxed
+install.
+
+== USE flags
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
 
 
 

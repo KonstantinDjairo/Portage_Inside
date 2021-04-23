@@ -38,7 +38,7 @@ There is also Himerge GUI,which stands for "Haskell interface
 for eMerge".
 
 Functions Provided
-====
+==
 
 Portage is characterized by its main function: compiling from source code the packages the user whishes to install. In doing so
 it allows costumization of compiler and target-application options

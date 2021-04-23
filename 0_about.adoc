@@ -1,5 +1,5 @@
-==About Portage 
-----
+== About Portage 
+
 Portage is a package management system originally created
 for and used by Gentoo Linux,and Funtoo Linux among others.
 
@@ -19,4 +19,79 @@ to be used with alternative package managers such as Paludis
 and pkgcore. Its goal is to specify the exact set of features
 and behaviour of package manager and ebuilds,serving as an
 authoritative reference for Portage.
-----
+
+== Acessing Portage
+
+Portage is similar to the BSD-style package management known as 
+ports,and was originally designed with FreeBSD's ports in mind.
+Portage is written in the Python programming language,and is the
+main utility that defines Gentoo. Although the system itself is 
+known as Portage,it consists of two main parts,the ebuild system
+and emerge. The ebuild system takes care of the actual work of 
+building and installing packages,while emerge provides an interface
+to ebuild: managing an ebuild repository, resolving dependencies 
+and similar issues.
+
+Fun fact:
+GTK based GUI, Porthole,is available for working for Portage. 
+There is also Himerge GUI,which stands for "Haskell interface 
+for eMerge".
+
+Functions Provided
+====
+
+Portage is characterized by its main function: compiling from source code the packages the user whishes to install. In doing so
+it allows costumization of compiler and target-application options
+to fit the system's specifications and to user's own whishes.
+
+Functionalities related to system management incluide:
+
+- Allowing parallel package-version installation
+- Tacking cross-package dependencies 
+- Managing a database of installed packages
+     providing a local ebuild repository,and synchronizing of 
+      the local Portage tree with remotes repositories. 
+
+- Functionalities related to individual package installation
+  include:
+     specifying compilation settings for the target machine and 
+      choosing packages components.
+      
+Portage distinguishes between three level of stability in ebuilds:
+
+- Stable
+     (e.g., the software works as intended with no 
+       known security issues at time of release)
+  
+- Keyword masked 
+     (mainly for packages that have not been sufficiently tested
+       on the target system architecture to be considered stable)
+       
+- Hard masked 
+     (Broken or very insecure packages)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

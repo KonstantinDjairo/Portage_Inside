@@ -110,6 +110,26 @@ install.
 
 == USE flags
 
+The Portage system offers the use of "USE flags",which allows users
+to indicate which softwares features they would like to include 
+(and exclude) while building packages. For example,there is a USE
+flag to include DVD support,where available,in packages compiled
+with the flag enabled. The USE flags affect which dependencies are
+required,generally affecting which optional features will be built
+into a given program when it is compiled. For example,in packages 
+which use a configure script,the USE flag _feature_ would translate
+to _./configure --with-feature_.
+
+The specification of USE flags is the usual way to configure
+programs on Gentoo. USE flags may be set manually,or via user-friendly 
+tools such as 'ufed' (USE flag editor),which lists flags along with
+their description. A list of available USE flags is available at the
+Gentoo website's .
+
+== Ebuild
+
+
+
 
           
           

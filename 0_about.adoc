@@ -210,6 +210,15 @@ pkg_postrm() {
 
 == Binary Packages
 
+Gentoo does have a binary packaging format,which is _.tbz2_ file
+(tar with bzip2 compression) with additional metadata. This 
+feature enables building of binary packages on one system (using
+Portage's _buildpkg_ or _quickpkg_) followed by quick installation
+on other,identical systems (with Portage's _getbinpkg_ or _emerge
+-K_). 
+
+== Masking
+
 
 
 
